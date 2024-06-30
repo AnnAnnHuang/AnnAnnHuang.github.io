@@ -1,0 +1,219 @@
+/* Base styles */
+html{
+	scroll-behavior: smooth;
+}
+body {
+    background-color: #0B0C10;
+    font-family: 'Dosis', sans-serif;
+    color: #ececec;
+}
+
+/* Typography */
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #a1ffe9;
+}
+
+h1 { 
+	font-size: 2.5rem;
+	margin: 0.5rem;
+}
+h2 { font-size: 1.8rem; }
+p { font-size: 1.5rem; }
+
+/* Layout */
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    padding-left: 11.5rem;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	list-style-type: none;
+	max-width: 50rem;
+}
+
+li {
+	display: inline;
+	background-color: #a1ffe9;
+  color:  #0B0C10;
+  padding: 0.6rem;
+  margin-inline: 0.25rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.25rem;
+  border-radius: 10%;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.main {
+  display: grid;
+  padding: 13rem;
+  max-width: 75rem;
+}
+
+.contact{
+	color: #a1ffe9;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 100%;
+}
+
+.about { 
+	padding-block: 5rem;
+	margin-bottom: 12.5rem;
+}
+
+.education {
+	padding-block: 2.5rem;
+	margin-block: 8rem;
+}
+
+.experience {
+	padding-block: 2.5rem;
+	margin-block: 8rem;
+}
+
+.projects { 
+	padding-block: 5rem;
+	margin-block: 8rem;
+}
+	
+.btn {
+  background-color: #a1ffe9;
+  color: #0B0C10;
+  padding: 0.5rem;
+  margin-inline: 0.5rem;
+  text-align: center;
+  display: inline;
+  font-size: 1.2rem;
+  border-radius: 10%;
+}
+
+p {
+    padding-inline: 10%;
+    width: 80%;
+    white-space: pre-line;
+    box-sizing: border-box;
+}
+
+[data-lucide] {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/* Resume Formatting */
+.resume-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.2rem;
+}
+
+.company-name { margin-bottom: 0.5rem; }
+
+.job-title{ margin-top: 0rem; }
+
+.resume-date { white-space: nowrap; }
+
+/* Utility classes */
+.highlight, p .highlight { color: #4ef037 !important; }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*Shrink Expand Text*/
+.expanded-info{
+	display: flex;
+  justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.expanded-info p{ margin-top: 0 }
+
+.expanded-info.show {
+  max-height: 100%;
+  transition: max-height 0.5s ease-in;
+}
+
+.expand-btn{
+	font-family: 'Dosis', sans-serif;
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding-left: 0;
+}
+
+/* Side Navigation */
+.sidenav {
+    height: 100%;
+    width: 11.5rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1f2833;
+    overflow-x: hidden;
+    padding-top: 1rem;
+}
+
+.sidenav a {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #a1ffe9;
+    display: block;
+}
+
+.sidenav a:hover { color: #4ef037; }
+
+@media screen and (max-height: 20rem) {
+    .sidenav { padding-top: 2rem; }
+    .sidenav a { font-size: 3rem; }
+}
+
+/* Typing effect */
+.container { display: inline-block; }
+
+.typed-out {
+    overflow: hidden;
+    border-right: 1rem solid #a1ffe9;
+    white-space: nowrap;
+    width: 0;
+    animation: 
+        typing 1s steps(17, end) forwards,
+        blink 1.2s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from { border-color: transparent; }
+    to { border-color: #a1ffe9; }
+}

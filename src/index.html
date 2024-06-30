@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I'm Annie Huang :)</title>
+	<link rel="stylesheet" href="styles.css">
+	<script defer src="index.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis&family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/lucide@latest/dist/lucide.min.css">
+	<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+	<!-- Side Navigation Bar -->
+	<div id="mySidenav" class="sidenav">
+			<a href="#about">About</a>
+			<a href="#education">Education</a>
+			<a href="#experience">Experience</a>
+			<a href="#projects">Projects</a>
+	</div>
+	
+	<!-- Opening Main Page -->
+	<section class="main">
+		<!--<img src="Me.jpg" alt="Me Photo" class="center">-->
+		<h1>
+			<div class="container">
+				<div class="typed-out"> 
+					<span class="highlight">Hello!</span> I'm Annie Huang : ) </div>
+			</div>
+			<div>Aspiring Software Engineer</div>
+		</h1>
+		<div>
+			<p class="contact"><i data-lucide="phone"></i> (720) 334-6588 
+				<i data-lucide="mail"></i> anniehuang@mines.edu</p>
+		</div>
+		<div class="button-container"><a href="https://www.linkedin.com/in/annie03huang/" target="_blank" class="btn"><i data-lucide="linkedin"></i></a> <a href="https://github.com/AnnAnnHuang" target="_blank" class="btn"><i data-lucide="github"></i></a> <a href="https://www.instagram.com/artbyanani/" target="_blank" class="btn"><i data-lucide="instagram"></i></a><a href="https://x.com/artbyanani" target="_blank" class="btn"><i data-lucide="twitter"></i></a></div>
+	</section>	
+
+	<script>
+    	document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+   	</script>
+
+	<!-- About Me Section -->
+	<section class="about" id = "about">
+		<h2>About Me</h2>
+		<p> As a full-time computer science student specializing in robotics and intelligent systems, I'm driven by a passion for many aspects of the field. In particular, my areas of interest lie in the rapid advancements of <span class="highlight">machine learning</span> algorithms in recent years, as well as, a life-long passion in the <span class="highlight">gaming industry</span>. Furthermore, my experience as a robotics researcher has left me with an interest in human centered technology. 
+
+		In particular, I'm fascinated by <span class="highlight">how humans interact with technology</span> and the societal implications of this relationship. This interest fuels my desire to create responsible, user-centric solutions that push the boundaries of what's possible while considering the broader consequences of technological advancements.</p>
+	</section>
+
+	<!-- Education Section -->
+	<section class="education" id = "education">
+		<h2>Education</h2>
+			<p class="company-name"=> Colorado School of Mines</p>
+			<p class="resume-item job-title">
+	  			<span class="highlight">B.S in Computer Science</span>
+	  			<span class="resume-date">Aug 2021 - May 2025</span>
+			</p>
+			<p> - Specializating in Robotics and Intelligent Systems
+				- Minor in Computational and Applied Mathematics
+				- Relevant Coursework: Operating Systems, Programming Languages, Advanced Software Engineering, Software Engineering, Computer Organization, Feedback Control Systems, Electrical Circuits, Discrete Math, Scientific Computing, Mathematical Modeling
+
+			</p>
+			<p class="company-name"=> University of Technology Sydney</p>
+			<p class="resume-item job-title">
+	  			<span class="highlight">Study Abroad Exchange Program</span>
+	  			<span class="resume-date">Jun 2023 - Nov 2023</span>
+			</p>
+			<p> - Relevant Coursework: Machine Learning, Advanced Algorithms, Introduction to Mechatronics Engineering
+			</p>
+	</section>
+
+	<!-- Resume Section -->
+	<section class="experience" id = "experience">
+		<h2>Experience</h2>
+
+		<!-- Most Recent -->
+			<p class="company-name"=> Plus One Robotics</p>
+			<p class="resume-item job-title">
+	  			<span class="highlight">Robotics Software Engineering Intern</span>
+	  			<span class="resume-date">May 2024 - Present</span>
+			</p>
+			<p>- Analyzed trained models and sample data to determine optimal parameters, particularly focusing on segmentation thresholds to minimize errors in classification.
+				- Explored modifications to training techniques to reduce incidence of misclassifications, considering whether adjusting the equivalency of errors across different classes could improve model performance.
+				<ul>
+					<li>Python</li> <li>PyTorch</li> <li>ROS</li> <li>Bash</li> <li>Computer Vision</li> <li>Machine Learning</li>
+				</ul>
+			</p>
+
+		<!-- Second -->
+			<p class="company-name"=> Colorado School of Mines MIRRORLab</p>
+			<p class="resume-item job-title">
+  				<span class="highlight">Undergraduate Research Assistant</span>
+  				<span class="resume-date">Aug 2022 - Present</span>
+			</p>
+			<p>- Spearheaded research on the perception of abstract pointing gestures showcased at the 2024 Human-Robot Interaction Conference.
+				- Conducted data analysis and hypothesis testing on experimental data involving human-robot interactions and virtual reality environments.
+				- Contributed to advancing understanding of human-robot interaction dynamics, particularly in the area of natural and efficient communication through gestures.
+				<ul>
+					<li>R</li> <li>LaTeX</li> <li>Virtual Reality</li> <li>Human-Robot Interaction</li>
+				</ul>
+			</p>
+	</section>
+
+	<!-- Projects Section -->
+	<section class="projects" id = "projects">
+		<h2>Projects</h2>
+		<p><span class="highlight">2024 Human-Robotics Interaction Research</span> | Mines Interactive Robotics Research</p>
+		
+		<div class="button-container"><a href="./HuangRanucciStogsdillHan2024hri.pdf" target="_blank" class="btn"><i data-lucide="files"></i> PDF</a> <a href="https://dl.acm.org/doi/10.1145/3610977.3634924" target="_blank" class="btn"><i data-lucide="circle-dot"></i> DOI</a> <a href="https://mirrorlab.mines.edu/publications/huang2024hri/" target="_blank" class="btn"><i data-lucide="bot"></i> MIRRORLab Website</a></div>
+		<p>I presented our work at the 2024 ACM/IEEE International Conference on Human-Robot Interaction <a class="highlight" href="https://humanrobotinteraction.org/" target="_blank">(HRI 2024)</a> in Boulder, Colorado. This research highlights the potential for robots to use more human-like gestures in large-scale interactions, and underscores the need for further exploration of multi-modal communication in robotics <button class="expand-btn highlight">. . .</button>
+		</p>
+    	<div class="expanded-info">
+			<p>Our research focused on enhancing robots' ability to generate appropriate gestures during task-oriented dialogues in large-scale human environments. We recognized that as robots are deployed in more expansive settings, they need to communicate about objects and locations beyond their immediate visual field. This context introduces a broader range of referring gestures compared to the small-scale interactions typically studied in HRI research.
+
+			To address this challenge, we conducted two human-subject studies. The first study examined how human gestures adapt in large-scale interaction contexts. We aimed to identify human-like gestures that could be effectively implemented on robot hardware. The second study, which I led, evaluated the use of these identified gestures by robots in a controlled Virtual Reality environment.
+
+			Our findings revealed that robots' use of Precise Deictic and Abstract Pointing gestures offers distinct benefits when referring to visible versus non-visible referents. Based on these results, we developed three concrete design guidelines for implementing gestures in robotic communication.
+			</p>
+		</div>
+	</section>
+</body>
+</html>
