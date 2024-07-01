@@ -1,7 +1,8 @@
 /* Base styles */
-html{
-	scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
+
 body {
     background-color: #0B0C10;
     font-family: 'Dosis', sans-serif;
@@ -15,11 +16,19 @@ h1, h2 {
 }
 
 h1 { 
-	font-size: 2.5rem;
-	margin: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0.5rem;
 }
+
 h2 { font-size: 1.8rem; }
-p { font-size: 1.5rem; }
+
+p { 
+    font-size: 1.5rem;
+    padding-inline: 10%;
+    width: 80%;
+    white-space: pre-line;
+    box-sizing: border-box;
+}
 
 /* Layout */
 section {
@@ -30,80 +39,59 @@ section {
 }
 
 ul {
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	list-style-type: none;
-	max-width: 50rem;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    list-style-type: none;
+    max-width: 50rem;
 }
 
-li {
-	display: inline;
-	background-color: #a1ffe9;
-  color:  #0B0C10;
-  padding: 0.6rem;
-  margin-inline: 0.25rem;
-  text-align: center;
-  display: inline-block;
-  font-size: 1.25rem;
-  border-radius: 10%;
+li, .btn {
+    display: inline-block;
+    background-color: #a1ffe9;
+    color: #0B0C10;
+    padding: 0.6rem;
+    margin-inline: 0.25rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 10%;
 }
 
-a{
-	text-decoration: none;
-	color: inherit;
+.btn {
+    padding: 0.5rem;
+    margin-inline: 0.5rem;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .main {
-  display: grid;
-  padding: 13rem;
-  max-width: 75rem;
+    display: grid;
+    padding: 13rem;
+    max-width: 75rem;
 }
 
-.contact{
-	color: #a1ffe9;
-	margin: 0.5rem;
-	padding: 0.5rem;
-	width: 100%;
+.contact {
+    color: #a1ffe9;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
 }
 
-.about { 
-	padding-block: 5rem;
-	margin-bottom: 12.5rem;
+/* Common styles for sections */
+.about, .education, .experience, .projects {
+    padding-block: 2.5rem;
+    margin-block: 8rem;
 }
 
-.education {
-	padding-block: 2.5rem;
-	margin-block: 8rem;
+.about, .projects { 
+    padding-block: 5rem;
 }
 
-.experience {
-	padding-block: 2.5rem;
-	margin-block: 8rem;
-}
-
-.projects { 
-	padding-block: 5rem;
-	margin-block: 8rem;
-}
-	
-.btn {
-  background-color: #a1ffe9;
-  color: #0B0C10;
-  padding: 0.5rem;
-  margin-inline: 0.5rem;
-  text-align: center;
-  display: inline;
-  font-size: 1.2rem;
-  border-radius: 10%;
-}
-
-p {
-    padding-inline: 10%;
-    width: 80%;
-    white-space: pre-line;
-    box-sizing: border-box;
-}
+.about { margin-bottom: 12.5rem; }
 
 [data-lucide] {
     width: 1.5rem;
@@ -118,53 +106,51 @@ p {
 
 /* Resume Formatting */
 .resume-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
 }
 
 .company-name { margin-bottom: 0.5rem; }
-
-.job-title{ margin-top: 0rem; }
-
+.job-title { margin-top: 0; }
 .resume-date { white-space: nowrap; }
 
 /* Utility classes */
 .highlight, p .highlight { color: #4ef037 !important; }
 
 .button-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/*Shrink Expand Text*/
-.expanded-info{
-	display: flex;
-  justify-content: center;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
+/* Shrink Expand Text */
+.expanded-info {
+    display: flex;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
 }
 
-.expanded-info p{ margin-top: 0 }
+.expanded-info p { margin-top: 0; }
 
 .expanded-info.show {
-  max-height: 100%;
-  transition: max-height 0.5s ease-in;
+    max-height: 100%;
+    transition: max-height 0.5s ease-in;
 }
 
-.expand-btn{
-	font-family: 'Dosis', sans-serif;
-	background-color: inherit;
-	color: inherit;
-	font: inherit;
-	border: none;
-	font-size: 1.5rem;
-	cursor: pointer;
-	padding-left: 0;
+.expand-btn {
+    font-family: 'Dosis', sans-serif;
+    background-color: inherit;
+    color: inherit;
+    font: inherit;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-left: 0;
 }
 
 /* Side Navigation */
@@ -182,17 +168,35 @@ p {
 
 .sidenav a {
     padding: 0.5rem 0.5rem 0.5rem 2rem;
-    text-decoration: none;
     font-size: 1.5rem;
     color: #a1ffe9;
     display: block;
+    position: relative;
+    transition: padding-left 0.3s ease;
 }
 
-.sidenav a:hover { color: #4ef037; }
+.sidenav a:hover {
+    color: #4ef037;
+    padding-left: 3.5rem;
+}
 
-@media screen and (max-height: 20rem) {
-    .sidenav { padding-top: 2rem; }
-    .sidenav a { font-size: 3rem; }
+.btn-arrow-slide-arrow {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-arrow-slide-arrow::before {
+    content: '>>';
+    display: block;
+}
+
+.sidenav a:hover .btn-arrow-slide-arrow {
+    opacity: 1;
+    transform: translate(-5px, -50%);
 }
 
 /* Typing effect */
