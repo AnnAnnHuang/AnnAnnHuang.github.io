@@ -70,8 +70,10 @@ a {
 
 .main {
     display: grid;
-    padding: 13rem;
+    padding: 2.5rem;
+    padding-top: 15%;
     max-width: 75rem;
+    margin-left: 11.5rem;
 }
 
 .contact {
