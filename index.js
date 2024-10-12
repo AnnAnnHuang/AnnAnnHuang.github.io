@@ -33,3 +33,35 @@ document.addEventListener('DOMContentLoaded', function() {
         expandBtn.textContent = expandedInfo.classList.contains('show') ? '--' : '. . .';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projects = document.querySelectorAll('.project');
+    const prevBtn = document.getElementById('prevProject');
+    const nextBtn = document.getElementById('nextProject');
+    let currentIndex = 0;
+
+    function showProject(index) {
+        projects.forEach(project => project.classList.remove('active'));
+        projects[index].classList.add('active');
+        
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === projects.length - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showProject(currentIndex);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < projects.length - 1) {
+            currentIndex++;
+            showProject(currentIndex);
+        }
+    });
+
+    // Show the first project initially
+    showProject(currentIndex);
+});

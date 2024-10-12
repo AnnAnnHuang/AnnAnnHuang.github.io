@@ -128,10 +128,33 @@ a {
     flex-wrap: wrap;
 }
 
+/*Projects Related Formatting*/
+.project-container {
+    width: 80%;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.project {
+    display: none;
+    width: 100%;
+}
+
+.project.active {
+    display: block;
+}
+
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 75rem;
+}
+
 /* Shrink Expand Text */
 .expanded-info {
     display: flex;
-    justify-content: center;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
@@ -223,3 +246,4 @@ a {
     from { border-color: transparent; }
     to { border-color: #a1ffe9; }
 }
+
