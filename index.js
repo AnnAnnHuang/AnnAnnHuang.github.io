@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentProject.classList.remove('active', outClass);
                 nextProject.classList.remove(inClass, 'sliding');
                 isAnimating = false;
-            }, 500); // Match this with your CSS transition duration
+            }, 500);
         });
 
         currentIndex = index;
