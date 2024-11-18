@@ -61,6 +61,8 @@ li, .btn {
     padding: 0.5rem;
     margin-inline: 0.5rem;
     font-size: 1.2rem;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 a {
@@ -128,44 +130,85 @@ a {
     flex-wrap: wrap;
 }
 
-/*Projects Related Formatting*/
-.project-container {
-    width: 80%;
-    max-width: 60rem;
-    margin: 0 auto;
-}
-
-.project {
-    display: none;
-    width: 100%;
-}
-
-.project.active {
-    display: block;
-}
-
+/* Project container and navigation */
 .project-nav {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
-    width: 100%;
-    max-width: 75rem;
+    width: 80%;
+    max-width: 60rem;
+    margin-inline: auto;
 }
 
-/* Shrink Expand Text */
+.project-container {
+    width: 80%;
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.project {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;  /* Start off-screen to the right */
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+/* Active state */
+.project.active {
+    left: 0;
+    opacity: 1;
+    position: relative;  /* This helps maintain container height */
+}
+
+/* Sliding states */
+.project.slide-out-left {
+    left: -100%;
+    opacity: 0;
+}
+
+.project.slide-out-right {
+    left: 100%;
+    opacity: 0;
+}
+
+.project.slide-in-left {
+    left: -100%;
+    opacity: 0;
+    position: absolute;
+}
+
+.project.slide-in-right {
+    left: 100%;
+    opacity: 0;
+    position: absolute;
+}
+
+.project.sliding {
+    left: 0;
+    opacity: 1;
+}
+
+/* Expanded info styles */
 .expanded-info {
-    display: flex;
+    display: block;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
+    opacity: 0;
+}
+
+.expanded-info.show {
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
 }
 
 .expanded-info p { margin-top: 0; }
 
-.expanded-info.show {
-    max-height: 100%;
-    transition: max-height 0.5s ease-in;
-}
 
 .expand-btn {
     font-family: 'Dosis', sans-serif;
