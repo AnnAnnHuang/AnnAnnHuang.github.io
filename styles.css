@@ -181,6 +181,13 @@ a {
     transition: all 0.5s ease;
 }
 
+.project p {
+    width: 100%;
+    padding-inline: 0;
+    margin-inline: 0;
+    text-align: left;
+}
+
 /* Project States */
 .project.active {
     left: 0;
