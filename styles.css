@@ -98,7 +98,6 @@ a {
     text-align: left;
     padding: var(--space-lg);
     padding-top: 15%;
-    max-width: 75rem;
     margin-left: var(--sidenav-width);
 }
 
