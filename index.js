@@ -1,13 +1,3 @@
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const projects = document.querySelectorAll('.project');
     const projectContainer = document.querySelector('.project-container');
