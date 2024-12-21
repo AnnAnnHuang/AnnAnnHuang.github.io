@@ -183,7 +183,7 @@ a {
 
 .project p {
     width: 100%;
-    padding-inline: 0;
+    padding-inline: 10%;
     margin-inline: 0;
     text-align: left;
 }
@@ -194,7 +194,6 @@ a {
     opacity: 1;
     position: relative;
 }
-
 .project.slide-out-left { left: -100%; }
 .project.slide-out-right { left: 100%; }
 
