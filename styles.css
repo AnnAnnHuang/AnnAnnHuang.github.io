@@ -94,6 +94,8 @@ a {
 /* Main Section */
 .main {
     display: grid;
+    place-items: center;
+    text-align: left;
     padding: var(--space-lg);
     padding-top: 15%;
     max-width: 75rem;
