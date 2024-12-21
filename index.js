@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projects = document.querySelectorAll('.project');
-    const projectContainer = document.querySelector('.project-container');
     const prevBtn = document.getElementById('prevProject');
     const nextBtn = document.getElementById('nextProject');
     let currentIndex = 0;
     let isAnimating = false;
 
-    // Handle collapsible info
     function setupCollapsibleInfo(project) {
         const expandBtn = project.querySelector('.expand-btn');
         const expandedInfo = project.querySelector('.expanded-info');
@@ -26,36 +24,44 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentProject = projects[currentIndex];
         const nextProject = projects[index];
         
-        // Reset any expanded info in the current project
+        // Reset expanded info
         const currentExpandedInfo = currentProject.querySelector('.expanded-info');
         const currentExpandBtn = currentProject.querySelector('.expand-btn');
         if (currentExpandedInfo && currentExpandedInfo.classList.contains('show')) {
             currentExpandedInfo.classList.remove('show');
-            if (currentExpandBtn) {
-                currentExpandBtn.textContent = '. . .';
-            }
+            currentExpandBtn.textContent = '. . .';
         }
 
-        // Determine slide direction classes
+        // Set initial positions
         const outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
         const inClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
 
-        // Set up the next project
-        nextProject.classList.add(inClass);
-        nextProject.classList.add('active');
+        // Clear any existing transition classes
+        currentProject.classList.remove('slide-out-left', 'slide-out-right', 'sliding');
+        nextProject.classList.remove('slide-in-left', 'slide-in-right', 'sliding');
 
-        // Start animation in the next frame
+        // Prepare next project
+        nextProject.style.display = 'block';
+        nextProject.classList.add(inClass);
+        
+        // Force browser reflow
+        void nextProject.offsetWidth;
+
+        // Start transition
         requestAnimationFrame(() => {
-            // Trigger sliding animation
             currentProject.classList.add(outClass);
             nextProject.classList.add('sliding');
-
-            // Clean up after animation
+            
             setTimeout(() => {
+                // Clean up classes
                 currentProject.classList.remove('active', outClass);
+                currentProject.style.display = 'none';
+                
                 nextProject.classList.remove(inClass, 'sliding');
+                nextProject.classList.add('active');
+                
                 isAnimating = false;
-            }, 500);
+            }, 500); // Match your CSS transition duration
         });
 
         currentIndex = index;
@@ -65,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.disabled = index === projects.length - 1;
     }
 
+    // Event Listeners
     prevBtn.addEventListener('click', () => {
         if (currentIndex > 0 && !isAnimating) {
             showProject(currentIndex - 1, 'prev');
@@ -77,11 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize all projects
-    projects.forEach(project => {
+    // Initialize projects
+    projects.forEach((project, index) => {
         setupCollapsibleInfo(project);
+        if (index !== currentIndex) {
+            project.style.display = 'none';
+        }
     });
-
-    // Show the first project initially
+    
+    // Show first project
     projects[currentIndex].classList.add('active');
+    prevBtn.disabled = true;
 });
