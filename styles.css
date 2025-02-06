@@ -1,10 +1,10 @@
 :root {
     /* Colors */
-    --color-bg: #0B0C10;
-    --color-text: #ececec;
-    --color-accent: #a1ffe9;
-    --color-highlight: #4ef037;
-    --color-sidenav: #1f2833;
+    --color-bg: #fdfcdc;
+    --color-text: #0081a7;
+    --color-accent: #00afb9;
+    --color-highlight: #f07167;
+    --color-sidenav: #fed9b7;
     
     /* Typography */
     --font-primary: 'Dosis', sans-serif;
@@ -78,7 +78,7 @@ li, .btn {
     margin-inline: var(--space-xs);
     text-align: center;
     font-size: var(--font-size-sm);
-    border-radius: 10%;
+    border-radius: 1rem;
 }
 
 .btn {
