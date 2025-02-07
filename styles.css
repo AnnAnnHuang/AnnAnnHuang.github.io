@@ -251,6 +251,7 @@ a {
     background-color: var(--color-sidenav);
     overflow-x: hidden;
     padding-top: var(--space-md);
+    align-items: center;
 }
 
 .sidenav a {
@@ -284,6 +285,18 @@ a {
 .sidenav a:hover .btn-arrow-slide-arrow {
     opacity: 1;
     transform: translate(-5px, -50%);
+}
+
+.sidenav a:first-child {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.sidenav a:first-child:hover {
+    padding-left: var(--space-sm);
+    color: var(--color-highlight);
 }
 
 /* Typing Animation */
