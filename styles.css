@@ -290,8 +290,8 @@ a {
 .sidenav a:first-child {
     display: flex;
     justify-content: center;
-    padding: var(--space-sm);
-    margin-bottom: var(--space-md);
+    padding: var(--space-xs);
+    margin-bottom: var(--space-sm);
 }
 
 .sidenav a:first-child:hover {
