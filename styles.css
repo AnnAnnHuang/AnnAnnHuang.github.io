@@ -165,12 +165,28 @@ a {
 }
 
 /* Project Container */
+.project-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md, 1rem);
+    width: 100%;
+    max-width: 70rem;
+    margin: var(--space-lg, 2rem) auto 0;
+}
+
+.project-nav-btn {
+    flex-shrink: 0;
+    align-self: center;
+}
+
 .project-container {
-    width: 80%;
+    flex: 1;
+    width: 100%;
     max-width: 60rem;
-    margin: 0 auto;
     position: relative;
     overflow: hidden;
+    min-height: 30rem;
+    transition: min-height 0.5s ease;
 }
 
 .project {
