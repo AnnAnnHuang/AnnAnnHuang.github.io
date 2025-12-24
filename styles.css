@@ -109,7 +109,7 @@ a {
 }
 
 /* Section Spacing */
-.about, .education, .experience, .projects {
+.about, .education, .experience, .projects, .leadership {
     padding-block: var(--space-lg);
     margin-block: 8rem;
 }
