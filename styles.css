@@ -154,18 +154,9 @@ a {
     flex-wrap: wrap;
 }
 
-/* Project Navigation */
-.project-nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: var(--space-lg);
-    width: 80%;
-    max-width: 60rem;
-    margin-inline: auto;
-}
-
-/* Project Container */
-.project-wrapper {
+/* Carousel Wrappers (for both projects and experience) */
+.project-wrapper,
+.experience-wrapper {
     display: flex;
     align-items: center;
     gap: var(--space-md, 1rem);
@@ -174,56 +165,98 @@ a {
     margin: var(--space-lg, 2rem) auto 0;
 }
 
-.project-nav-btn {
+.project-nav-btn,
+.experience-nav-btn {
     flex-shrink: 0;
     align-self: center;
 }
 
-.project-container {
+/* Carousel Containers */
+.project-container,
+.experience-container {
     flex: 1;
     width: 100%;
     max-width: 60rem;
     position: relative;
     overflow: hidden;
-    min-height: 30rem;
+    min-height: 25rem;
     transition: min-height 0.5s ease;
 }
 
-.project {
+/* Adjust project container specifically if needed */
+.project-container {
+    min-height: 30rem;
+}
+
+/* Carousel Items */
+.project,
+.experience-item {
     width: 100%;
     position: absolute;
     top: 0;
     left: 100%;
     opacity: 0;
     transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.project p {
+.project p,
+.experience-item p {
     width: 100%;
     padding-inline: 10%;
     margin-inline: 0;
     text-align: left;
 }
 
-/* Project States */
-.project.active {
+.project ul,
+.experience-item ul {
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Active State */
+.project.active,
+.experience-item.active {
     left: 0;
     opacity: 1;
     position: relative;
 }
-.project.slide-out-left { left: -100%; }
-.project.slide-out-right { left: 100%; }
 
+/* Slide Out Animations */
+.project.slide-out-left,
+.experience-item.slide-out-left { 
+    left: -100%; 
+}
+
+.project.slide-out-right,
+.experience-item.slide-out-right { 
+    left: 100%; 
+}
+
+/* Slide In Animations */
 .project.slide-in-left,
-.project.slide-in-right {
+.project.slide-in-right,
+.experience-item.slide-in-left,
+.experience-item.slide-in-right {
     opacity: 0;
     position: absolute;
 }
 
-.project.slide-in-left { left: -100%; }
-.project.slide-in-right { left: 100%; }
+.project.slide-in-left,
+.experience-item.slide-in-left { 
+    left: -100%; 
+}
 
-.project.sliding {
+.project.slide-in-right,
+.experience-item.slide-in-right { 
+    left: 100%; 
+}
+
+/* Sliding State */
+.project.sliding,
+.experience-item.sliding {
     left: 0;
     opacity: 1;
 }
